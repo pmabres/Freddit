@@ -2,9 +2,7 @@ name: Android CI
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches: [ develop ]
 
 jobs:
   build:
@@ -17,5 +15,13 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: Decode firebase file
+      id: firebase_service_account_file
+      uses: timheuer/base64-to-file@v1.0.3
+      with:
+        fileName: 'firebase_service_account.json'
+        encodedString: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_BASE64 }}
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew assembleRelease appDistributionUploadRelease
+      env:
+        GOOGLE_APPLICATION_CREDENTIALS: ${{ steps.firebase_service_account_file.outputs.filePath }}
