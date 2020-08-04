@@ -34,6 +34,35 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871903464293:android:477c7160b27eb9f3c46f8c",
+        "android_client_info": {
+          "package_name": "co.nz.freddit.develop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "871903464293-8bcf95b78jso0su2uhj5hu5dfdvk5gav.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDqwLecuKxHKSPhS6qoB1tNoItWFhvNig"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "871903464293-8bcf95b78jso0su2uhj5hu5dfdvk5gav.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

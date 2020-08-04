@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.posts.detail.PostDetailsFragment">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/strokeColor"
+        tools:visibility="visible" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/postDetailsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/postContainer"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="24dp"
+                app:layout_constraintBottom_toTopOf="@+id/barrier"
+                app:layout_constraintEnd_toStartOf="@+id/gdRight"
+                app:layout_constraintStart_toStartOf="@+id/gdLeft"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/postTitle"
+                style="@style/primary_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/gdRight"
+                app:layout_constraintStart_toStartOf="@+id/gdLeft"
+                app:layout_constraintTop_toTopOf="@+id/postContainer"
+                tools:text="Post title" />
+
+            <TextView
+                android:id="@+id/postDescription"
+                android:paddingBottom="16dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                style="@style/primary_body"
+                app:layout_constraintEnd_toStartOf="@+id/gdRight"
+                app:layout_constraintStart_toStartOf="@+id/gdLeft"
+                app:layout_constraintTop_toBottomOf="@+id/postTitle"
+                tools:text="Post description" />
+
+            <TextView
+                android:id="@+id/commentTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                style="@style/primary_body"
+                android:text="@string/comments_title"
+                app:layout_constraintEnd_toStartOf="@+id/gdRight"
+                app:layout_constraintStart_toStartOf="@+id/gdLeft"
+                app:layout_constraintTop_toBottomOf="@+id/postContainer" />
+
+            <co.nz.freddit.ui.components.CommentsRecyclerView
+                android:id="@+id/commentList"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/gdRight"
+                app:layout_constraintStart_toStartOf="@+id/gdLeft"
+                app:layout_constraintTop_toBottomOf="@+id/commentTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gdLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="24dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gdRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="24dp" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="postDescription" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>

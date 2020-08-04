@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <!-- Color Names taken from https://colornamer.robertcooper.me/ -->
+    <color name="colorEerieBlack">#1A1A1B</color>
+    <color name="colorJet">#343536</color>
+    <color name="colorArmorWash">#030303</color>
+    <color name="colorShyDenim">#D7DADC</color>
+
+    <color name="colorPrimary">@color/colorEerieBlack</color>
+    <color name="colorPrimaryDark">@color/colorArmorWash</color>
+    <color name="colorAccent">@color/colorJet</color>
+
+    <color name="textPrimaryColor">@color/colorShyDenim</color>
+    <color name="strokeColor">@color/colorShyDenim</color>
+
 </resources>

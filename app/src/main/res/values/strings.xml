@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Freddit</string>
     <string name="title_item_detail">Item Detail</string>
+    <string name="post_details">Details</string>
+    <string name="post_collection">Posts</string>
+    <string name="comments_title">Comments:</string>
 </resources>
