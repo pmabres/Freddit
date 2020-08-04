@@ -34,9 +34,6 @@ android {
 
     buildTypes {
         release {
-            firebaseAppDistribution {
-                groups="qa"
-            }
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -53,6 +50,9 @@ android {
             versionNameSuffix "-develop"
         }
         envProd {
+            firebaseAppDistribution {
+                groups="qa"
+            }
             dimension "environment"
         }
     }
