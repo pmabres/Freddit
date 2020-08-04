@@ -22,6 +22,6 @@ jobs:
         fileName: 'firebase_service_account.json'
         encodedString: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_BASE64 }}
     - name: Build with Gradle
-      run: ./gradlew assembleRelease appDistributionUploadRelease
+      run: ./gradlew assembleEnvDevelopRelease appDistributionUploadEnvDevelopRelease && ./gradlew assembleEnvProdRelease appDistributionUploadEnvProdRelease
       env:
         GOOGLE_APPLICATION_CREDENTIALS: ${{ steps.firebase_service_account_file.outputs.filePath }}
